@@ -1,0 +1,53 @@
+/* back-ground-color: #FFC60B; // for text */
+/* back-ground-color: #c16a08; // border for text */
+/* back-ground-color: #ffde73; // for header & main content */
+/* back-ground-color: #ECA43B; // for buttons */
+
+body {
+  background-image: url("./img/hive2-waterless.jpg");
+  height: 100vh;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 15fr; /* 1fr; */
+  /* grid-template: 1fr 10fr 1fr / repeat(3, 1fr);
+  grid-template-areas: "header header header" ". content ." "footer footer footer"; */
+}
+
+header {
+  grid-area: 1 / 1 / 2 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  background-color: #ffde73;
+}
+.nav-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  align-items: end;
+  gap: 20px;
+}
+button {
+  height: 80%;
+  width: 15%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-style: solid;
+  border-bottom: none;
+  /* background-color: #eca43b; */
+  background-image: url("./img/honey_drain.png");
+}
+#content {
+  grid-column: 2 / 3;
+  margin: 50px;
+  background-color: #ffde73;
+  border-radius: 16px;
+}
+ul {
+  list-style-type: none;
+}
