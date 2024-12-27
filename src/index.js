@@ -10,17 +10,21 @@ const contact = document.querySelector(`#contact-btn`);
 const displayHomePage = function () {
   const html = `
         <div class="description">
-            <h1>Beary's Breakfast Bar</h1>
-            <p>
-              Beary's has the best porridge! The atmosphere and customer service
-              make you feel like you are sitting in the middle of the woods, eating
-              like a bear! This is exactly the kind of place that I like to return
-              to again and again.
-            </p>
+            <div class="title item">
+                <h1>Beary's Breakfast Bar</h1>
+            </div>
+            <div class="paragraph item">
+                <p>
+                  Beary's has the best porridge! The atmosphere and customer service
+                  make you feel like you are sitting in the middle of the woods, eating
+                  like a bear! This is exactly the kind of place that I like to return
+                  to again and again.
+                </p>
+            </div>
           </div>
-          <div class="schedule">
+          <div class="schedule item">
             <ul>
-              Hours
+              <h3>Hours</h3>
               <li>Monday: 6am - 6pm</li>
               <li>Tuesday: 6am - 6pm</li>
               <li>Wednesday: 6am - 6pm</li>
@@ -30,12 +34,15 @@ const displayHomePage = function () {
               <li>Sunday: 8am - 8pm</li>
             </ul>
           </div>
-          <div class="location">
+          <div class="location item">
             <h3>Location</h3>
             <p>123 Forest Drive, Forestville, Maine</p>
         </div>
     `;
   content_container.innerHTML = html;
+  home.classList.add("selected");
+  menu.classList.remove("selected");
+  contact.classList.remove("selected");
 };
 
 const displayMenuPage = function () {
@@ -124,12 +131,15 @@ const displayMenuPage = function () {
         </div>
     `;
   content_container.innerHTML = html;
+  menu.classList.add("selected");
+  home.classList.remove("selected");
+  contact.classList.remove("selected");
 };
 
 const displayContactPage = function () {
   const html = `
     <h1>Contact Us</h1>
-    <div class="contact-info">
+    <div class="contact-info item">
         <h5>Mama Bear</h5>
         <div class="contact-description">
             Chef
@@ -137,7 +147,7 @@ const displayContactPage = function () {
             totallyRealEmail@notFake.com
         </div>
     </div> 
-    <div class="contact-info">
+    <div class="contact-info item">
         <h5>Papa Bear</h5>
         <div class="contact-description">
             Manager
@@ -145,7 +155,7 @@ const displayContactPage = function () {
             perfectlyRealEmail@notFake.com
         </div>
     </div> 
-    <div class="contact-info">
+    <div class="contact-info item">
         <h5>Baby Bear</h5>
         <div class="contact-description">
             Waiter
@@ -155,8 +165,12 @@ const displayContactPage = function () {
     </div> 
     `;
   content_container.innerHTML = html;
+  contact.classList.add("selected");
+  menu.classList.remove("selected");
+  home.classList.remove("selected");
 };
 
 home.addEventListener("click", displayHomePage);
 menu.addEventListener("click", displayMenuPage);
 contact.addEventListener("click", displayContactPage);
+displayHomePage();

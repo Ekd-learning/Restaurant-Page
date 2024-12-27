@@ -9,7 +9,7 @@ body {
   margin: 0px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 15fr; /* 1fr; */
+  grid-template-rows: minmax(80px, 1fr) 15fr; /* 1fr; */
   /* grid-template: 1fr 10fr 1fr / repeat(3, 1fr);
   grid-template-areas: "header header header" ". content ." "footer footer footer"; */
 }
@@ -41,13 +41,50 @@ button {
   border-bottom: none;
   /* background-color: #eca43b; */
   background-image: url("./img/honey_drain.png");
+  background-color: #eebe22;
 }
+.selected {
+  background-color: #c16a08;
+}
+
 #content {
   grid-column: 2 / 3;
   margin: 50px;
   background-color: #ffde73;
   border-radius: 16px;
+  min-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 ul {
   list-style-type: none;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #c16a08;
+  border-radius: 16px;
+  margin: 20%;
+  margin-top: 7%;
+  margin-bottom: 5%;
+  padding: 20px;
+}
+
+/* h1 {
+  background-color: #eebe22;
+  padding: 20px;
+  border-radius: 16px;
+} */
+.paragraph,
+.schedule,
+.location,
+h1 {
+  margin: 3%;
+  background-color: #eebe22;
+  border-radius: 16px;
+  padding: 20px;
+  border-color: #c16a08;
+  border-width: 200px;
 }
